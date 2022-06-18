@@ -1,0 +1,38 @@
+.db-button {
+  height: 40px;
+  font-weight: bolder;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  padding: auto 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.db-button--variant-primary {
+  background: #17AA8D;
+}
+.db-button--variant-secondary {
+  background: #0B548B;
+}
+
+.db-button:hover {
+  opacity: 0.9;
+}
+
+.db-button:active {
+  filter: brightness(0.9);
+}
+
+
+.db-button--text-small {
+  font-size: 14px;
+}
+
+.db-button--block {
+  display: block;
+  width: 100%;
+}
+
