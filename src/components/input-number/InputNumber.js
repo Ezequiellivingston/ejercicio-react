@@ -8,13 +8,12 @@ const FORMAT_CALLBACK = {
   currency: formatCurrency,
   number: formatNumber,
 };
-
 function InputNumber(props) {
   const {
     value, format, onChange, placeholder, elementLeft, elementRight,
   } = props;
-
   const inputRef = useRef();
+
   const [width, setWidth] = useState();
 
   function formatValue(v) {
@@ -30,10 +29,8 @@ function InputNumber(props) {
   }
 
   function handleInput(e) {
-    console.log(e.target.value);
     const v = formatValue((e.target.value).replaceAll('.', '').replaceAll(',', ''));
 
-    console.log(v);
     inputRef.current.value = formatCurrency(v);
     calculateWidthInputFromLengthValue(v);
 
@@ -47,7 +44,11 @@ function InputNumber(props) {
     inputRef.current.value = v;
     calculateWidthInputFromLengthValue(v);
   }, []);
-
+  useEffect(() => {
+    const v = formatValue(value);
+    inputRef.current.value = v;
+    calculateWidthInputFromLengthValue(v);
+  }, [value]);
   return (
     <div className="db-input-number">
       {elementLeft}
@@ -78,8 +79,8 @@ InputNumber.propTypes = {
   placeholder: PropTypes.string,
   format: PropTypes.string,
   onChange: PropTypes.func,
-  elementLeft: PropTypes.element,
-  elementRight: PropTypes.element,
+  elementLeft: PropTypes.node,
+  elementRight: PropTypes.node,
 };
 
 export default InputNumber;
