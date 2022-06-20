@@ -50,14 +50,21 @@ function SimulateCredit() {
 
           <div className="db-card-simulator-range">
             <InputRange
-              min={0}
+              min={5000}
               max={50000}
               step={1}
               value={value}
               onChange={(v) => handleAmount(v)}
               indicatorRight={({ max }) => (
                 <span>
+                  $
                   {formatCurrency(max)}
+                </span>
+              )}
+              indicatorLeft={({ min }) => (
+                <span>
+                  $
+                  {formatCurrency(min)}
                 </span>
               )}
             />
