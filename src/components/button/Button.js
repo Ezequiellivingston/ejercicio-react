@@ -36,7 +36,7 @@ Button.propTypes = {
   block: PropTypes.bool,
   textSmall: PropTypes.bool,
   onClick: PropTypes.func,
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 export default Button;
