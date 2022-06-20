@@ -7,19 +7,19 @@ import './InputRange.css';
 
 function inputRange(props) {
   const {
-    value, onChange, max, min, step, indicatortLeft, indicatortRight,
+    value, onChange, max, min, step, indicatorLeft: ElementLeft, indicatorRight: ElementRight,
   } = props;
 
   function IndicatortLeft() {
-    if (!indicatortLeft) return <span>{min}</span>;
+    if (!ElementLeft) return <span>{min}</span>;
 
-    return <indicatortLeft min={min} />;
+    return <ElementLeft min={min} />;
   }
 
   function IndicatortRight() {
-    if (!indicatortRight) return <span>{max}</span>;
+    if (!ElementRight) return <span>{max}</span>;
 
-    return <indicatortRight max={max} />;
+    return <ElementRight max={max} />;
   }
 
   return (
@@ -45,16 +45,16 @@ function inputRange(props) {
 inputRange.defaultProps = {
   min: undefined,
   max: undefined,
-  indicatortLeft: undefined,
-  indicatortRight: undefined,
-  onChange: () => {},
+  indicatorLeft: undefined,
+  indicatorRight: undefined,
+  onChange: () => { },
 };
 
 inputRange.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
   onChange: PropTypes.func,
-  indicatortLeft: PropTypes.element,
-  indicatortRight: PropTypes.element,
+  indicatorLeft: PropTypes.func,
+  indicatorRight: PropTypes.func,
 };
 export default inputRange;
