@@ -11,7 +11,7 @@ const Template = () => {
 
   return (
     <div style={{ display: 'flex', gap: '20px' }}>
-      <InputNumber placeholder="00" />
+      <InputNumber value={10} placeholder="00" />
 
       <InputNumber value={value} onChange={(v) => setValue(v)} placeholder="00" elementLeft={<span>$</span>} />
     </div>

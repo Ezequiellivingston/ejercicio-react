@@ -22,6 +22,11 @@ function InputNumber(props) {
   }
 
   function calculateWidthInputFromLengthValue(v) {
+    if (v === undefined) {
+      setWidth(30);
+      return;
+    }
+
     const length = v.toString().length * 10 || 10;
     const offset = 20;
 
